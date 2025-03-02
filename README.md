@@ -32,7 +32,7 @@ import requests
 username = 'your_username'
 password = 'your_password'
 
-response = requests.post('https://deepwaterpoint.unanet.biz/platform/rest/login', json={
+response = requests.post('https://[company].unanet.biz/platform/rest/login', json={
     'username': username,
     'password': password
 })
@@ -53,7 +53,7 @@ import asyncio
 from aiopenapi3 import OpenAPI
 
 async def main():
-    spec_url = "https://deepwaterpoint.unanet.biz/platform/swagger/"
+    spec_url = "https://[company].unanet.biz/platform/swagger/"
     async with OpenAPI.load(spec_url) as api:
         print("Available API endpoints:")
         for path in api.paths.keys():
@@ -72,7 +72,7 @@ brew install openapi-generator-cli
 
 #### Generate a Python Client SDK:
 ```bash
-openapi-generator-cli generate -i https://deepwaterpoint.unanet.biz/platform/swagger/ -g python -o unanet_sdk
+openapi-generator-cli generate -i https://[company].unanet.biz/platform/swagger/ -g python -o unanet_sdk
 ```
 
 #### Use the Generated SDK:
